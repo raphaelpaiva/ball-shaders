@@ -1,7 +1,9 @@
+uniform sampler2D sampler2d0;
 varying vec3 normal, lightDir, eyeVec;
 
 void main (void)
 {
+	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
 	vec4 final_color = 
 	(gl_FrontLightModelProduct.sceneColor * gl_FrontMaterial.ambient) + 
 	(gl_LightSource[0].ambient * gl_FrontMaterial.ambient);
