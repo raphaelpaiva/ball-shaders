@@ -1,14 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ShaderLab>
 	<shaders>
-		<vertex>basketball/vertex.vert</vertex>
-		<fragment>basketball/fragment.frag</fragment>
+		<vertex>soccer/vertex.vert</vertex>
+		<fragment>soccer/fragment.frag</fragment>
 	</shaders>
 	<model>
 		<id>0</id>
 	</model>
 	<textures>
-		<filename>basketball/textures/basketball02.jpg</filename>
-		<filename>basketball/textures/basketball03.jpg</filename>
+		<filename>soccer/textures/soccer 01.png</filename>
 	</textures>
 </ShaderLab>
