@@ -15,20 +15,20 @@ void main (void)
 	
 	if(lambertTerm > 0.0)
 	{
-		final_color += gl_LightSource[0].diffuse * 
-		               tex_color * 
-					   lambertTerm;	
+		final_color += gl_LightSource[0].diffuse * tex_color * lambertTerm;
 		
 		vec3 E = normalize(eyeVec);
 		
 		vec3 R = reflect(-L, N);
 		
-		float specular = pow( max(dot(R, E), 0.0), 
-		                 8 );
+		float specular = 0.0;
+
+		if (tex_color.xyz == vec3(0.0))
+		{
+			specular = pow( max(dot(R, E), 0.0), 8 );
+		}
 		
-		final_color += gl_LightSource[0].specular * 
-		               tex_color * 
-					   specular;	
+		final_color += gl_LightSource[0].specular * specular;	
 	}
 
 	gl_FragColor = final_color;			
