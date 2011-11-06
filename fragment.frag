@@ -4,6 +4,7 @@ varying vec3 normal, lightDir, eyeVec;
 void main (void)
 {
 	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
+
 	vec4 final_color = 
 	(gl_FrontLightModelProduct.sceneColor * tex_color) + 
 	(gl_LightSource[0].ambient * tex_color);

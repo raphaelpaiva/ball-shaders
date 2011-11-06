@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShaderLab>
+	<shaders>
+		<vertex>../../cg/bolas/vertex.vert</vertex>
+		<fragment>../../cg/bolas/fragment.frag</fragment>
+	</shaders>
+	<model>
+		<id>0</id>
+	</model>
+	<textures>
+		<filename>../../../Downloads/soccer 01.png</filename>
+	</textures>
+</ShaderLab>
