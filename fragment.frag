@@ -16,15 +16,18 @@ void main (void)
 	if(lambertTerm > 0.0)
 	{
 		final_color += gl_LightSource[0].diffuse * 
-		               gl_FrontMaterial.diffuse * 
+		               tex_color * 
 					   lambertTerm;	
 		
 		vec3 E = normalize(eyeVec);
+		
 		vec3 R = reflect(-L, N);
+		
 		float specular = pow( max(dot(R, E), 0.0), 
-		                 gl_FrontMaterial.shininess );
+		                 8 );
+		
 		final_color += gl_LightSource[0].specular * 
-		               gl_FrontMaterial.specular * 
+		               tex_color * 
 					   specular;	
 	}
 
