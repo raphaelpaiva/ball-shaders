@@ -1,9 +1,12 @@
-uniform sampler2D sampler2d0;
+uniform sampler2D sampler2d0, sampler2d1;
 varying vec3 normal, lightDir, eyeVec;
 
 void main (void)
 {
 	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
+	vec4 tex_color_garras = texture2D(sampler2d1, gl_TexCoord[0].xy);
+
+	tex_color = tex_color * tex_color_garras;
 
 	vec4 final_color = 
 	(gl_FrontLightModelProduct.sceneColor * tex_color) + 
