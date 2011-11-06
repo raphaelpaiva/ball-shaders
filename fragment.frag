@@ -5,8 +5,8 @@ void main (void)
 {
 	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
 	vec4 final_color = 
-	(gl_FrontLightModelProduct.sceneColor * gl_FrontMaterial.ambient) + 
-	(gl_LightSource[0].ambient * gl_FrontMaterial.ambient);
+	(gl_FrontLightModelProduct.sceneColor * tex_color) + 
+	(gl_LightSource[0].ambient * tex_color);
 							
 	vec3 N = normalize(normal);
 	vec3 L = normalize(lightDir);
