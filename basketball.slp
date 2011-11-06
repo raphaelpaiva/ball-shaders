@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShaderLab>
+	<shaders>
+		<vertex>../../../cg/bolas/basketball/vertex.vert</vertex>
+		<fragment>../../../cg/bolas/basketball/fragment.frag</fragment>
+	</shaders>
+	<model>
+		<id>0</id>
+	</model>
+	<textures>
+		<filename>../../../cg/bolas/basketball/textures/basketball02.jpg</filename>
+		<filename>../../../cg/bolas/basketball/textures/basketball03.jpg</filename>
+	</textures>
+</ShaderLab>
