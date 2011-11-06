@@ -1,20 +1,19 @@
-//uniform sampler2D sampler2d0;
+uniform sampler2D sampler2d0;
 varying vec3 normal, lightDir, eyeVec;
 
 void main()
-{	
-//	vec4 new_vertex_pos;
-//	vec4 dv;
-//	float df;
+{
+	vec4 vertex = gl_Vertex;
 
-	gl_TexCoord[0] = gl_MultiTexCoord0;
+	vec4 color_map = texture2D(sampler2d0, gl_MultiTexCoord0.xy);
 
-//	dv = texture2D(sampler2d0, gl_MultiTexCoord0.xy);
-
-//	df = 0.30*dv.x + 0.59*dv.y + 0.11*dv.z;
-
-//	new_vertex_pos = vec4(gl_Normal * df * 100.0, 0.0) + gl_Vertex;
-
+/* Acessar uma textura carregada aqui nao funciona...
+	if(color_map.r < 0.3 && color_map.r > 0.05){
+		vertex.xyz *= (0.98);
+	}
+*/
+	vertex = gl_ModelViewMatrix * vertex;
+	
 	normal = gl_NormalMatrix * gl_Normal;
 
 	vec3 vVertex = vec3(gl_ModelViewMatrix * gl_Vertex);
@@ -22,6 +21,7 @@ void main()
 	lightDir = vec3(gl_LightSource[0].position.xyz - vVertex);
 	eyeVec = -vVertex;
 
-//	gl_Position = gl_ModelViewProjectionMatrix * new_vertex_pos;
-	gl_Position = ftransform();
+	gl_Position = gl_ProjectionMatrix * vertex;
+	gl_TexCoord[0] = gl_MultiTexCoord0;
 }
+
