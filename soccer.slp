@@ -13,5 +13,6 @@
 		<filename>soccer/textures/soccerLogos01.png</filename>
 		<filename>soccer/textures/displacement_map.png</filename>
 		<filename>soccer/textures/dirtTexture01.png</filename>
+		<filename>soccer/textures/displacement_map_bico.png</filename>
 	</textures>
 </ShaderLab>
