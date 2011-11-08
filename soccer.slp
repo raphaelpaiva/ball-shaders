@@ -5,10 +5,12 @@
 		<fragment>soccer/fragment.frag</fragment>
 	</shaders>
 	<model>
-		<id>0</id>
+		<id>2</id>
 	</model>
 	<textures>
 		<filename>soccer/textures/soccer 01.png</filename>
 		<filename>soccer/textures/garras.jpg</filename>
+		<filename>soccer/textures/soccerLogos01.png</filename>
+		<filename>soccer/textures/displacement_map.png</filename>
 	</textures>
 </ShaderLab>

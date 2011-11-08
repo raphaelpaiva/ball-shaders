@@ -1,12 +1,19 @@
-uniform sampler2D sampler2d0, sampler2d1;
+uniform sampler2D sampler2d0, sampler2d1, sampler2d2;
 varying vec3 normal, lightDir, eyeVec;
 
 void main (void)
 {
 	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
 	vec4 tex_color_garras = texture2D(sampler2d1, gl_TexCoord[0].xy);
+	vec4 tex_color_logo = texture2D(sampler2d2, gl_TexCoord[0].xy);
 
-	tex_color = tex_color * tex_color_garras;
+	if (tex_color_logo.a != 0.0)
+	{
+		tex_color_logo.a = 1.0;
+		tex_color = tex_color * tex_color_logo;
+	}
+
+	tex_color *= tex_color_garras;
 
 	vec4 final_color = 
 	(gl_FrontLightModelProduct.sceneColor * tex_color) + 
@@ -29,9 +36,11 @@ void main (void)
 
 		if (tex_color.xyz == vec3(0.0))
 		{
-			specular = pow( max(dot(R, E), 0.0), 8 );
+			float k = max(dot(R, E), 0.0);
+
+		    specular = pow(k, 32.0);
 		}
-		
+
 		final_color += gl_LightSource[0].specular * specular;	
 	}
 
