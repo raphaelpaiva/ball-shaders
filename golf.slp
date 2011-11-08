@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ShaderLab>
+	<shaders>
+		<vertex>golf/vertex.vert</vertex>
+		<fragment>golf/fragment.frag</fragment>
+	</shaders>
+	<model>
+		<id>2</id>
+	</model>
+	<textures>
+		<filename>golf/textures/golf_texture.jpg</filename>
+	</textures>
+</ShaderLab>
