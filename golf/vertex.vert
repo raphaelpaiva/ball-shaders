@@ -13,7 +13,7 @@ void main()
 
 	df = 0.30*dv.x + 0.59*dv.y + 0.11*dv.z;
 
-	new_vertex_pos = vec4(gl_Normal * df * 0.08, 0.0) + gl_Vertex;
+	new_vertex_pos = vec4(gl_Normal * df * 0.18, 0.0) + gl_Vertex;
 
 	normal = gl_NormalMatrix * gl_Normal;
 

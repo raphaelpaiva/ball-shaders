@@ -8,11 +8,7 @@ void main (void)
 	vec4 tex_color_logo = texture2D(sampler2d2, gl_TexCoord[0].xy);
 	vec4 tex_color_dirt = texture2D(sampler2d4, gl_TexCoord[0].xy);
 
-	if (tex_color_logo.a != 0.0)
-	{
-		tex_color_logo.a = 1.0;
-		tex_color = tex_color * tex_color_logo;
-	}
+	tex_color = tex_color * tex_color_logo;
 
 	tex_color *= tex_color_garras;
 
