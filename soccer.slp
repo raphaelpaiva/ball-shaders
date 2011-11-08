@@ -12,5 +12,6 @@
 		<filename>soccer/textures/garras.jpg</filename>
 		<filename>soccer/textures/soccerLogos01.png</filename>
 		<filename>soccer/textures/displacement_map.png</filename>
+		<filename>soccer/textures/dirtTexture01.png</filename>
 	</textures>
 </ShaderLab>

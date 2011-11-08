@@ -6,12 +6,12 @@ void main()
 	vec4 vertex = gl_Vertex;
 
 	vec4 color_map = texture2D(sampler2d3, gl_MultiTexCoord0.xy);
-/*
+
 	if(color_map.rgb != vec3(1.0))
 	{
 		vertex.xyz *= (0.98);
 	}
-*/
+
 	vertex = gl_ModelViewMatrix * vertex;
 	
 	normal = gl_NormalMatrix * gl_Normal;

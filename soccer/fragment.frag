@@ -1,4 +1,4 @@
-uniform sampler2D sampler2d0, sampler2d1, sampler2d2;
+uniform sampler2D sampler2d0, sampler2d1, sampler2d2, sampler2d4;
 varying vec3 normal, lightDir, eyeVec;
 
 void main (void)
@@ -6,6 +6,7 @@ void main (void)
 	vec4 tex_color = texture2D(sampler2d0, gl_TexCoord[0].xy);
 	vec4 tex_color_garras = texture2D(sampler2d1, gl_TexCoord[0].xy);
 	vec4 tex_color_logo = texture2D(sampler2d2, gl_TexCoord[0].xy);
+	vec4 tex_color_dirt = texture2D(sampler2d4, gl_TexCoord[0].xy);
 
 	if (tex_color_logo.a != 0.0)
 	{
@@ -14,6 +15,8 @@ void main (void)
 	}
 
 	tex_color *= tex_color_garras;
+
+	tex_color = max(tex_color + tex_color_dirt, vec4(0.0, 0.0, 0.0, 1.0));
 
 	vec4 final_color = 
 	(gl_FrontLightModelProduct.sceneColor * tex_color) + 
